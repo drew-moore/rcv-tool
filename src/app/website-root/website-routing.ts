@@ -2,6 +2,8 @@ import {NgModule} from "@angular/core";
 import {RouterModule} from "@angular/router";
 import {WebsiteRootContainer} from "./website-root.container";
 import { BallotContainer } from "../ballot/ballot.container";
+import { ResultsContainer } from "../results/results.container";
+import { CreateContainer } from "../create/create.container";
 
 const SITE_ROUTES = [
   {
@@ -11,6 +13,10 @@ const SITE_ROUTES = [
       {
         path: 'poll/:pollId/ballot',
         component: BallotContainer
+      },
+      {
+        path: 'poll/:pollId/results',
+        component: ResultsContainer
       },
       {
         path: 'poll/:pollId',
