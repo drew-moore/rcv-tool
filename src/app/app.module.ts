@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppContainer } from './app.container';
 import { RouterModule } from "@angular/router";
+import { CoreModule } from "./core/core.module";
 
 export const APP_ROUTES = [
   {
@@ -21,7 +22,9 @@ export const APP_ROUTES = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(APP_ROUTES)
+    RouterModule.forRoot(APP_ROUTES),
+
+    CoreModule
   ],
   providers: [],
   bootstrap: [ AppContainer]
