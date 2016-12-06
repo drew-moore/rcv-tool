@@ -5,6 +5,7 @@ import { BallotContainer } from "../ballot/ballot.container";
 import { ResultsContainer } from "../results/results.container";
 import { CreateContainer } from "../create/create.container";
 
+
 const SITE_ROUTES = [
   {
     path: '',
@@ -22,6 +23,11 @@ const SITE_ROUTES = [
         path: 'poll/:pollId',
         redirectTo: 'poll/:pollId/ballot',
         pathMatch:'full'
+      },
+
+      {
+        path:'/create',
+        component: CreateContainer
       }
     ]
   }

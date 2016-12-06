@@ -13,7 +13,9 @@ import { CreateModule } from "../create/create.module";
     SharedModule,
 
     BallotModule,
-    ResultsModule
+    ResultsModule,
+
+    CreateModule
   ],
   declarations: [ WebsiteRootContainer, WebsiteRootComponent]
 })
