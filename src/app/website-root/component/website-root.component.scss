@@ -1,0 +1,40 @@
+@import "./../../../styles";
+
+$nav-height:60px;
+$nav-bg:  md-color($rcv-app-primary, 800);
+
+.main-nav {
+  height: $nav-height;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  background-color: md-color($rcv-app-primary, 800);
+  color: md-contrast($rcv-app-primary, 800);
+
+  button {
+    height: $nav-height;
+  }
+
+
+}
+
+.stage {
+  max-width: 1000px;
+  position: relative;
+  @include mq-min('desktop'){
+    margin: 25px auto;
+    height: calc(100% - #{$nav-height} - 50px);
+  }
+
+  @include mq-btw('tablet', 'desktop'){
+    margin: 15px 20px;
+    height: calc(100% - #{$nav-height} - 30px);
+  }
+
+  @include mq-max('tablet'){
+    margin: 10px;
+    height: calc(100% - #{$nav-height} - 20px);
+  }
+
+
+}
