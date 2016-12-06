@@ -4,7 +4,7 @@ import {WebsiteRootContainer} from "./website-root.container";
 import { BallotContainer } from "../ballot/ballot.container";
 import { ResultsContainer } from "../results/results.container";
 import { CreateContainer } from "../create/create.container";
-
+import { HomeContainer } from "../home/home.container";
 
 const SITE_ROUTES = [
   {
@@ -28,6 +28,10 @@ const SITE_ROUTES = [
       {
         path:'/create',
         component: CreateContainer
+      },
+      {
+        path: '',
+        component: HomeContainer
       }
     ]
   }

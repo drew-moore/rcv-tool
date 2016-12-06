@@ -6,6 +6,7 @@ import { SharedModule } from "../shared/shared.module";
 import { BallotModule } from "../ballot/ballot.module";
 import { ResultsModule } from "../results/results.module";
 import { CreateModule } from "../create/create.module";
+import { HomeModule } from "../home/home.module";
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { CreateModule } from "../create/create.module";
     BallotModule,
     ResultsModule,
 
+    HomeModule,
     CreateModule
   ],
   declarations: [ WebsiteRootContainer, WebsiteRootComponent]
