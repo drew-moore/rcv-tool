@@ -1,0 +1,82 @@
+
+$breakpoints: (
+  "phone":        400px,
+  "phone-wide":   480px,
+  "tablet-small": 640px,
+  "tablet":       768px,
+  "tablet-wide":  1024px,
+  "desktop":      1248px,
+  "desktop-wide": 1440px
+);
+
+@mixin mq-btw($minWidth, $maxWidth) {
+  @if map_has_key($breakpoints, $minWidth) {
+    $min: map_get($breakpoints, $minWidth);
+    $max: map_get($breakpoints, $maxWidth) - 1px;
+
+    @media only screen and (min-width: $min) and (max-width: $max) {
+      @content;
+    }
+  }
+}
+
+
+@mixin mq-min($width) {
+  @if map_has_key($breakpoints, $width) {
+    $width: map_get($breakpoints, $width);
+
+    @media only screen and (min-width: $width) {
+      @content;
+    }
+  }
+}
+
+
+@mixin mq-max($width) {
+  @if map_has_key($breakpoints, $width) {
+    $width: map_get($breakpoints, $width) - 1px;
+
+    @media only screen and (max-width: $width) {
+      @content;
+    }
+  }
+}
+
+
+@mixin font-reg($size: false, $colour: false, $weight: false,  $lh: false) {
+  font-family: 'Hind', Helvetica, Arial, sans-serif;
+  @if $size { font-size: $size; }
+  @if $colour { color: $colour; }
+  @if $weight { font-weight: $weight; }
+  @if $lh { line-height: $lh; }
+}
+
+
+@mixin font-italic($size: false, $colour: false, $weight: false,  $lh: false) {
+  font-family: 'Lato', Helvetica, Arial, sans-serif;
+  font-style: italic;
+  @if $size { font-size: $size; }
+  @if $colour { color: $colour; }
+  @if $weight { font-weight: $weight; }
+  @if $lh { line-height: $lh; }
+}
+
+@mixin font-bold($size: false, $colour: false, $weight: false,  $lh: false) {
+  font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+  @if $weight { font-weight: $weight; } @else {  font-weight: 500; }
+  @if $size { font-size: $size; }
+  @if $colour { color: $colour; }
+  @if $lh { line-height: $lh; }
+}
+
+@mixin font-heading($size: false, $colour: false, $weight: false,  $lh: false) {
+  font-family: 'Quicksand', Helvetica, Arial, sans-serif;
+  @if $size { font-size: $size; } @else {  font-size: 1.8em;  }
+  @if $colour { color: $colour; } @else {font-weight: 400}
+  @if $weight { font-weight: $weight; }
+  @if $lh { line-height: $lh; }
+}
+
+
+
+
