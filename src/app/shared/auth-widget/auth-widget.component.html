@@ -1,3 +1,45 @@
-<div *ngIf="loginButtonsVisible$ | async">
+<div *ngIf="(state | async).authenticated === false" class="anonymous-wrapper" [@fromRight]>
+
+  <div class="login-buttons-wrapper" [@loginSignupBtns]="currMode == 'INACTIVE' ? 'visible' : 'hidden'">
+    <button md-button (click)="loginClicked()">LOGIN</button>
+    <button md-button (click)="signupClicked()">SIGNUP</button>
+  </div>
+
+  <div *ngIf="currMode == 'LOGIN_ACTIVE'" class="login-dialog" [@fromRight]>
+    <div class="fabs-wrapper" [@collapseRight]="(inputActive | async) ? 'collapsed' : 'visible'">
+      <button md-mini-fab class="social-fab fb" (click)="socialLogin('facebook')">
+        <md-icon fontSet="fa" fontIcon="fa-facebook-f"></md-icon>
+      </button>
+      <button md-mini-fab class="social-fab google" (click)="socialLogin('google')">
+        <md-icon fontSet="fa" fontIcon="fa-google"></md-icon>
+      </button>
+      <button md-mini-fab class="social-fab twitter" (click)="socialLogin('twitter')">
+        <md-icon fontSet="fa" fontIcon="fa-twitter"></md-icon>
+      </button>
+      <div class="or">or</div>
+    </div>
+    <button md-mini-fab class="social-fab email">
+      <md-icon fontSet="fa" fontIcon="fa-envelope-o"></md-icon>
+    </button>
+    <div class="email-input-wrapper" [formGroup]="loginForm">
+      <md-input type="email" formControlName="email" dividerColor="warn" class="input email"
+                [@shrinkInactive]="(inputActive | async) ? 'active' : 'inactive'"
+                (focus)="inputFocused()" (blur)="inputBlurred()">
+        <md-placeholder class="placeholder">Email</md-placeholder>
+      </md-input>
+      <md-input type="password" class="input password" *ngIf="inputActive | async" [@growRight]
+                (focus)="inputFocused()" (blur)="inputBlurred()" formControlName="password">
+        <md-placeholder class="placeholder">Password</md-placeholder>
+      </md-input>
+      <button md-raised-button color="primary" *ngIf="inputActive | async" [@growRight]
+              [disabled]="!loginForm.valid" class="submit-btn" (click)="emailLogin()">SUBMIT
+      </button>
+
+    </div>
+  </div>
+
+</div>
+<div *ngIf="(state | async).authenticated === true" class="authenticated-wrapper" [@fromRight]>
+
 
 </div>

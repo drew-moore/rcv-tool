@@ -1,4 +1,101 @@
+@import '~@angular/material/core/theming/all-theme';
+@import "../../../assets/style/theme";
+
+$twitter-blue: #00aced;
+$facebook-blue: #3b5998;
+$google-orange: #dd4b39;
+
 :host {
   display: flex;
+  align-items: center;
+  height: 100%;
 }
 
+button:not(.social-fab) {
+  height: 100%;
+}
+
+md-icon {
+  color: md-contrast($rcv-app-primary, 800);
+}
+
+.login-buttons-wrapper {
+  align-self: stretch;
+  /*
+  making this absolute and hiding it via opacity rather than removing it from the layout helps make the rest of the
+  animation smoother
+  */
+  position: absolute;
+  height: 100%;
+  top: 0;
+  right: 0;
+}
+
+.login-dialog {
+  display: flex;
+  align-items: center;
+
+}
+
+.or {
+  font-size: 0.8em;
+  font-weight: 500;
+  font-style: italic;
+  margin: 0 10px;
+}
+
+.email-input-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+md-input {
+  margin: 0 5px;
+  .placeholder {
+    color: md-contrast($rcv-app-primary, 800);
+  }
+}
+
+.fabs-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.social-fab {
+  margin: 0 5px;
+  display: block;
+  &.fb {
+    background-color: $facebook-blue;
+
+    .fa-facebook-f {
+      color: white;
+    }
+
+  }
+
+  &.twitter {
+    background-color: $twitter-blue;
+
+    .fa-twitter {
+      color: white;
+    }
+  }
+
+  &.github {
+    background-color: white;
+  }
+
+  &.google {
+    background-color: $google-orange;
+
+    i {
+      color: white
+    }
+  }
+
+  &.email {
+    background-color: md-color($rcv-app-primary, 800);
+    color: md-contrast($rcv-app-primary, 800);
+    align-self: center;
+  }
+}

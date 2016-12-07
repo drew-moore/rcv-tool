@@ -1,10 +1,12 @@
 @import "./../../../styles";
 
-$nav-height:60px;
+$nav-height:66px;
 $nav-bg:  md-color($rcv-app-primary, 800);
 
 .main-nav {
   height: $nav-height;
+  padding: 3px 0;
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: stretch;
@@ -14,8 +16,6 @@ $nav-bg:  md-color($rcv-app-primary, 800);
   button {
     height: $nav-height;
   }
-
-
 }
 
 .stage {
