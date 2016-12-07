@@ -1,7 +1,4 @@
-
-
 import { user } from "./user";
-
 
 
 describe('User', () => {
@@ -30,7 +27,8 @@ describe('User', () => {
       image: image
     };
 
-    expect(Object.assign(user(inputWithId), {$key:id})).toEqual(it, `User created with id field did not equal otherwise-identical user created with $key`);
+    expect(Object.assign(user(inputWithId), { $key: id }))
+      .toEqual(it, `User created with id field did not equal otherwise-identical user created with $key`);
 
   });
 
@@ -43,7 +41,7 @@ describe('User', () => {
       image: image
     };
 
-    expect(()=>{user(input)}).toThrow(`$key and id both exist on object but do not match: ${JSON.stringify(input)}`);
+    expect(() => {user(input)}).toThrow(`$key and id both exist on object but do not match: ${JSON.stringify(input)}`);
 
   });
 
@@ -65,9 +63,9 @@ describe('User', () => {
       name: name
     };
 
-    expect(()=>{user(noName)}).toThrow(`Cannot create User without name: ${JSON.stringify(noName)}`);
-    expect(()=>{user(noId)}).toThrow(`Cannot create User without id: ${JSON.stringify(noId)}`);
-    expect(()=>{user(noImg)}).toThrow(`Cannot create User without image: ${JSON.stringify(noImg)}`);
+    expect(() => {user(noName)}).toThrow(`Cannot create User without name: ${JSON.stringify(noName)}`);
+    expect(() => {user(noId)}).toThrow(`Cannot create User without id: ${JSON.stringify(noId)}`);
+    expect(() => {user(noImg)}).toThrow(`Cannot create User without image: ${JSON.stringify(noImg)}`);
 
   });
 

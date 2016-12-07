@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { AuthService } from "../../core/services/auth.service";
+import { AuthService } from "../../core/services/auth";
 
 @Component({
   selector: 'rcv-auth-widget',
@@ -8,7 +8,6 @@ import { AuthService } from "../../core/services/auth.service";
 export class AuthWidgetContainer implements OnInit {
 
   constructor(private authService: AuthService) {
-
   }
 
   ngOnInit() {

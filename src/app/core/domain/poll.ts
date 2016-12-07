@@ -1,4 +1,4 @@
-import {Moment} from "moment";
+import { Moment } from "moment";
 import { setId } from "./index";
 
 
@@ -51,23 +51,23 @@ export interface Poll {
   updated: Moment;
 }
 
-export function pollOption(input:any): PollOption {
+export function pollOption(input: any): PollOption {
   setId(input, 'pollOption');
-  if (!input.text){
+  if (!input.text) {
     throw `Cannot create PollOption without text: ${JSON.stringify(input)}`;
   }
-  if (!input.image){
+  if (!input.image) {
     throw `Cannot create PollOption without image: ${JSON.stringify(input)}`;
   }
 
   return input as PollOption;
 }
 
-export function poll(input:any): Poll {
+export function poll(input: any): Poll {
 
   setId(input, 'Poll');
 
-  if (!input.options){
+  if (!input.options) {
     throw `Cannot create Poll without options: ${JSON.stringify(input)}`;
   } else {
     input.options = input.options.map(opt => pollOption(opt));

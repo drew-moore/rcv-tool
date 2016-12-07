@@ -11,8 +11,8 @@ import {
   keyframes
 } from "@angular/core";
 import { Subject, BehaviorSubject, Observable } from "rxjs";
-import { AuthState } from "../../core/state/auth/auth.state";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
+import { AuthState } from "../../core/services/auth";
 
 export type Mode = 'INACTIVE' | 'LOGIN_ACTIVE' | 'SIGNUP_ACTIVE';
 const EMAIL_REGEX = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;

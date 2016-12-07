@@ -1,8 +1,8 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from "@angular/core";
 import { AngularFire } from "angularfire2";
 
 @Injectable()
-export class PollService {
+export class UserService {
 
   constructor(private fire: AngularFire) { }
 

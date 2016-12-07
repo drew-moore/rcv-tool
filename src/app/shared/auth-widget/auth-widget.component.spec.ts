@@ -5,7 +5,7 @@ import { AuthWidgetComponent } from "./auth-widget.component";
 import { ReactiveFormsModule } from "@angular/forms";
 import { Subject, BehaviorSubject } from "rxjs";
 import { MaterialModule } from "@angular/material";
-import { AuthState } from "../../core/state/auth/auth.state";
+import { AuthState } from "../../core/services/auth/auth.state";
 
 describe('AuthWidgetComponent', () => {
   const testUser = { name: 'Test User', id: 'id-test-user', image: 'testuser.png', isVerified: false };

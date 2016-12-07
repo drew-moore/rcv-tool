@@ -1,12 +1,9 @@
 import { ActionReducer, combineReducers } from "@ngrx/store";
 import { compose } from "@ngrx/core/compose";
 import { storeFreeze } from "ngrx-store-freeze";
-import { environment } from "../../../environments/environment";
-import { AuthState } from "./auth/auth.state";
-import authReducer from "./auth/auth.reducer";
-
-export * from './auth';
-
+import { environment } from "../../environments/environment";
+import { AuthState } from "./services/auth/auth.state";
+import authReducer from "./services/auth/auth.reducer";
 
 export interface AppState {
   auth: AuthState

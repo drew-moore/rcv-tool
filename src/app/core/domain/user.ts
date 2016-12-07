@@ -1,4 +1,3 @@
-
 import { setId } from "./index";
 export interface User {
   /**
@@ -40,11 +39,11 @@ export function user(it): User {
 
   setId(it, 'User');
 
-  if (!it.name){
+  if (!it.name) {
     throw `Cannot create User without name: ${JSON.stringify(it)}`
   }
 
-  if (!it.image){
+  if (!it.image) {
     throw `Cannot create User without image: ${JSON.stringify(it)}`
   }
 

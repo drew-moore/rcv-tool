@@ -1,4 +1,4 @@
-import * as moment from 'moment';
+import * as moment from "moment";
 import { poll } from "./poll";
 
 describe('Poll', () => {
@@ -30,26 +30,26 @@ describe('Poll', () => {
   const created = moment().subtract(1, 'day');
   const updated = moment();
 
-    it('factory function should return an instance given valid input', () => {
-      let input = {
-        prompt: prompt,
-        options: options,
-        $key: id,
-        owner: owner,
-        created: created,
-        updated: updated
-      };
+  it('factory function should return an instance given valid input', () => {
+    let input = {
+      prompt: prompt,
+      options: options,
+      $key: id,
+      owner: owner,
+      created: created,
+      updated: updated
+    };
 
-      let it = poll(input);
+    let it = poll(input);
 
-      expect(it.prompt).toEqual(prompt);
-      expect(it.id).toEqual(id);
-      expect(it.owner).toEqual(owner);
-      expect(it.created).toEqual(created);
-      it.options.forEach((opt, idx)=> {
-        expect(opt.id).toEqual(options[idx].$key);
-        expect(opt.text).toEqual(options[idx].text);
-      })
+    expect(it.prompt).toEqual(prompt);
+    expect(it.id).toEqual(id);
+    expect(it.owner).toEqual(owner);
+    expect(it.created).toEqual(created);
+    it.options.forEach((opt, idx) => {
+      expect(opt.id).toEqual(options[ idx ].$key);
+      expect(opt.text).toEqual(options[ idx ].text);
+    })
 
-    });
+  });
 });
